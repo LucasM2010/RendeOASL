@@ -1,106 +1,153 @@
-
-/* styles.css */
-
-/* Reset some default styles */
-body, h1, ul {
+/* Styles for the overall body */
+body {
+    background-color: #e0f7fa; 
+    background-position: 50%;
+    background-size: cover;
+    color: #333;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-}
-
+/* Styles for the layout container */
 .layout {
     display: flex;
-    min-height: 100vh;
 }
 
+/* Styles for the sidebar */
 .sider {
-    width: 250px;
-    background: #333;
-    color: #fff;
+    background-color: #ffffff;
+    border-right: 2px solid #ddd;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    position: fixed;
-    height: 100%;
+    width: 250px;
 }
 
 .sider .logo {
-    text-align: center;
     margin-bottom: 20px;
 }
 
 .sider nav ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .sider nav ul li {
-    margin: 15px 0;
+    margin-bottom: 15px;
 }
 
 .sider nav ul li a {
-    color: #fff;
-    text-decoration: none;
+    color: #333;
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .sider nav ul li a i {
     margin-right: 10px;
 }
 
-.sider .logout a {
-    color: #e74c3c;
+.sider nav ul li.logout a {
+    color: #d9534f;
 }
 
+/* Styles for the main content area */
 .main-layout {
-    margin-left: 250px;
+    flex: 1;
     padding: 20px;
-    width: calc(100% - 250px);
 }
 
-.header .logo-image {
+.header {
+    margin-bottom: 20px;
+}
+
+.logo-image {
     max-width: 100%;
     height: auto;
 }
 
-.content {
-    margin-top: 20px;
-}
-
-.effect-message {
-    font-size: 1.5em;
-    color: #333;
+.content h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 0;
 }
 
 .image-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
 }
 
-.image-container img {
+.hover-image {
     max-width: 100%;
     height: auto;
-    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
-.image-container img:hover {
-    transform: scale(1.1);
+.hover-image:hover {
+    transform: scale(1.05);
 }
 
+/* Styles for the footer */
 .footer {
-    text-align: center;
+    background-color: #ffffff;
+    border-top: 2px solid #ddd;
     padding: 10px;
-    background: #333;
+    text-align: center;
+}
+
+/* Additional styles for buttons if needed */
+button {
+    background-color: #4caf50; 
+    border: none;
+    border-radius: 3px;
     color: #fff;
-    position: absolute;
-    bottom: 0;
+    cursor: pointer;
+    margin-right: 10px;
+    opacity: 0.8;
+    padding: 5px 10px;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+/* General form input styles */
+input, select {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding: 5px;
     width: 100%;
+}
+
+/* Styles specific to todo-list components (if needed) */
+.todo-list {
+    border-bottom: 1px solid #555;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.todo {
+    align-items: center;
+    background-color: #e3f2fd; 
+    border-radius: 5px;
+    box-shadow: 0 10px #0000001a;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.todo-form {
+    padding: 1.5rem;
+}
+
+.complete {
+    background-color: #5cb85c;
+}
+
+.remove {
+    background-color: #d9534f;
 }
