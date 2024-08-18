@@ -1,188 +1,106 @@
-.login-background {
-    background-image: url('');
-    background-size: cover;
-    background-position: center;
-    height: 35vh; 
-  }
-  
-  
-.login-warp {
-    max-width: 370px;
-    margin: auto;
-    padding: 70px;
-    border: 5px solid #ccc;
-    border-radius: 10px;
-  }
-  
-  .login-warp form {
+
+/* styles.css */
+
+/* Reset some default styles */
+body, h1, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.layout {
     display: flex;
-    flex-direction: column;
-  }
-  
-  .login-warp input[type="text"],
-  .login-warp input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .login-warp button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #1890ff;
+    min-height: 100vh;
+}
+
+.sider {
+    width: 250px;
+    background: #333;
     color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .login-warp button[type="submit"]:hover {
-    background-color: #40a9ff;
-  }
-  
-  .login-warp .ant-checkbox-wrapper {
-    margin-bottom: 10px;
-  }
-  
-  .login-warp a {
-    float: right;
-  }
-  .logo {
-    width: 170px; 
-    height: 10px;
-
-  }
-  
-  
-.cadastrar-ong {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  background-color: #d3d3d3;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: fixed;
+    height: 100%;
 }
 
-.logo-container {
-  text-align: center;
-  margin-bottom: 20px;
+.sider .logo {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.logo {
-  max-width: 150px;
-  border-radius: 8px;
+.sider nav ul {
+    list-style: none;
 }
 
-.form-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.sider nav ul li {
+    margin: 15px 0;
 }
 
-.ant-form-item {
-  margin-bottom: 16px;
+.sider nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
-.ant-btn-primary {
-  background-color: #4CAF50;
-  border-color: #4CAF50;
+.sider nav ul li a i {
+    margin-right: 10px;
 }
 
-.ant-btn-primary:hover,
-.ant-btn-primary:focus {
-  background-color: #45A049;
-  border-color: #45A049;
+.sider .logout a {
+    color: #e74c3c;
 }
 
-.ant-btn-default {
-  border-color: #d9d9d9;
+.main-layout {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
 }
 
-.cadastrar-empresa {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  background-color: #d3d3d3;
+.header .logo-image {
+    max-width: 100%;
+    height: auto;
 }
 
-.logo-container {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.logo {
-  max-width: 170px;
-  height: auto;
-  margin-left: -55px; 
-}
-
-.form-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.ant-form-item {
-  margin-bottom: 16px;
-}
-
-.ant-btn-primary {
-  background-color: #4CAF50;
-  border-color: #4CAF50;
-}
-
-.ant-btn-primary:hover,
-.ant-btn-primary:focus {
-  background-color: #45A049;
-  border-color: #45A049;
-}
-
-.ant-btn-default {
-  border-color: #d9d9d9;
-}
-
-
-
-.logo {
-  max-width: 170px;
-  height: auto;
-  margin-left: -55px; 
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
+.content {
+    margin-top: 20px;
 }
 
 .effect-message {
-  text-align: center;
-  font-size: 24px;
-  color: #333; 
-  margin: 0; 
-  padding: 20px; 
-  background-color: #f0f0f0;
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-
-.hover-image {
-  width: 300px; 
-  height: 300px; 
-  margin: 100px; 
-  transition: transform 0.1s ease;
-  border-radius: 20px; 
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.hover-image:hover {
-  transform: scale(1.4); 
-  border-radius: 10px;
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
 }
 
+.image-container img:hover {
+    transform: scale(1.1);
+}
 
-
+.footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
