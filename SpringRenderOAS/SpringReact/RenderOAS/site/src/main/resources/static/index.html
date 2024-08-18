@@ -13,9 +13,8 @@
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div class="app">
-        <h1>CALENDÁRIO</h1>
+        <h1>Calendário</h1>
         <div class="calendar">
-            <!-- Aqui você pode adicionar um calendário, por exemplo usando uma biblioteca JavaScript ou HTML simples -->
             <p>Selecione uma data para marcar:</p>
             <input type="date" id="calendar-input"/>
             <button id="mark-date">Marcar Data</button>
@@ -24,7 +23,33 @@
             </div>
         </div>
     </div>
-    <script defer="defer" src="/static/js/main.dc540c75.js"></script>
-    <h1>Marque suas datas de conclusões de tarefas na disciplina , Programação Orientada a Serviços</h1>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const markDateButton = document.getElementById('mark-date');
+            const markedDatesContainer = document.getElementById('marked-dates');
+            const calendarInput = document.getElementById('calendar-input');
+
+            markDateButton.addEventListener('click', () => {
+                const selectedDate = calendarInput.value;
+                if (selectedDate) {
+                    const existingDates = Array.from(markedDatesContainer.children);
+                    const isAlreadyMarked = existingDates.some(dateElement => dateElement.textContent === selectedDate);
+                    
+                    if (!isAlreadyMarked) {
+                        const dateElement = document.createElement('div');
+                        dateElement.classList.add('todo');
+                        dateElement.textContent = selectedDate;
+
+                        markedDatesContainer.appendChild(dateElement);
+                        calendarInput.value = '';
+                    } else {
+                        alert('Esta data já foi marcada.');
+                    }
+                } else {
+                    alert('Por favor, selecione uma data.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
